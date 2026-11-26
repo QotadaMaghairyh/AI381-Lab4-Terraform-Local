@@ -16,8 +16,9 @@ resource "docker_image" "api" {
 
 # The image must launch FastAPI on 0.0.0.0:8000 using its existing entrypoint.
 resource "docker_container" "api" {
-  name  = var.container_name
-  image = docker_image.api.image_id
+  name    = var.container_name
+  image   = docker_image.api.image_id
+  restart = "unless-stopped"
 
   ports {
     internal = 8000
