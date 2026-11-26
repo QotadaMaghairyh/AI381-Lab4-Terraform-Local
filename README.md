@@ -77,6 +77,38 @@ managed revisions, public HTTPS ingress, Azure budget alerts, or shared Azure
 state storage. Local state is not a team remote backend; keep it backed up
 privately and do not run concurrent deployments from different state copies.
 
+## Verified Lab 4 results
+
+Results below were recorded on 26 November 2026. They describe completed
+demonstrations, not a fresh runtime test during documentation preparation.
+
+| Demonstration | Verified result |
+|---|---|
+| Initial deployment | 2 added, 0 changed, 0 destroyed; health and prediction requests returned HTTP 200 |
+| [PR #1](https://github.com/QotadaMaghairyh/AI381-Lab4-Terraform-Local/pull/1) | Reviewed restart policy change to `unless-stopped`; merged with commit `63e1fc20a30197febecbf252bd1100f7a9c1645c` |
+| [PR CI run](https://github.com/QotadaMaghairyh/AI381-Lab4-Terraform-Local/actions/runs/45820246862) | Formatting, initialization, validation, and Trivy configuration scanning passed |
+| Controlled drift | Manual restart policy `no`; plan detected exactly 0 additions, 1 in-place correction, 0 destructions |
+| Drift recovery | Apply: 0 added, 1 changed, 0 destroyed; same container ID; final plan had no changes |
+| Controlled destroy | Exactly 2 Lab 4 Terraform resource records removed; both image tags retained |
+| Timed rebuild | Apply: 2 added, 0 changed, 0 destroyed, in **3.332850438 seconds** |
+| Post-rebuild verification | New container running and healthy, restart policy `unless-stopped`, `/health` HTTP 200, final plan with no changes |
+
+Rebuild timing uses `time.monotonic_ns()` around the whole Terraform apply
+process, including planning and creation. It excludes subsequent health
+verification and reuses the local image without rebuilding it. See the
+[evidence index](evidence/README.md) for command output, safety checks, timing,
+container identity checks, and submission gaps.
+
+The local requirements demonstrated are declarative image/container management,
+variable inputs, ownership labels, a localhost URL output, provider locking,
+PR checks, manual local deployment, drift recovery, and a timed rebuild.
+Azure OIDC, remote state, Azure cost controls, and automatic GitHub-hosted apply
+are **not implemented**. The GitHub workflow neither posts Terraform plan
+comments nor performs an automatic deployed-API smoke test; plans and runtime
+tests were executed locally. Instructor approval covers the local deployment
+and independent repository; equivalence to each grading item must still be
+checked against the e-learning rubric.
+
 ## Cleanup
 
 When you intentionally want to remove the Lab 4 deployment, review a destroy

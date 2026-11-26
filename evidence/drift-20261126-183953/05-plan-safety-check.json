@@ -1,0 +1,15 @@
+{
+  "plan": "0 to add, 1 to change in place, 0 to destroy",
+  "resource": "docker_container.api",
+  "actions": [
+    "update"
+  ],
+  "changes": {
+    "restart": [
+      "no",
+      "unless-stopped"
+    ]
+  },
+  "replacement": false,
+  "container_id": "26b5872cc00508382fd4f48bb3862a05144247912b4ce8c1d59edb7c3b3c951c"
+}

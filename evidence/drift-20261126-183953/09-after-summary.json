@@ -1,0 +1,13 @@
+{
+  "container_id": "26b5872cc00508382fd4f48bb3862a05144247912b4ce8c1d59edb7c3b3c951c",
+  "id_unchanged": true,
+  "status": "running",
+  "health": "healthy",
+  "restart_policy": "unless-stopped",
+  "health_http_status": 200,
+  "final_plan": "No changes",
+  "baseline_restart": "unless-stopped",
+  "controlled_drift_restart": "no",
+  "recovered_restart": "unless-stopped",
+  "recovery_apply": "0 added, 1 changed, 0 destroyed"
+}

@@ -1,0 +1,30 @@
+$ terraform plan -input=false -no-color -detailed-exitcode -out=drift-demo-recovery.tfplan
+docker_image.api: Refreshing state... [id=sha256:9d36a169db1a56bbef85b59c75ebeadbda5c305904334589c4493d53ee88ac44ai381-lab4-churn:test]
+docker_container.api: Refreshing state... [id=26b5872cc00508382fd4f48bb3862a05144247912b4ce8c1d59edb7c3b3c951c]
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  ~ update in-place
+
+Terraform will perform the following actions:
+
+  # docker_container.api will be updated in-place
+  ~ resource "docker_container" "api" {
+        id                                          = "26b5872cc00508382fd4f48bb3862a05144247912b4ce8c1d59edb7c3b3c951c"
+        name                                        = "ai381-lab4-churn-api"
+      ~ restart                                     = "no" -> "unless-stopped"
+        # (50 unchanged attributes hidden)
+
+        # (6 unchanged blocks hidden)
+    }
+
+Plan: 0 to add, 1 to change, 0 to destroy.
+
+─────────────────────────────────────────────────────────────────────────────
+
+Saved the plan to: drift-demo-recovery.tfplan
+
+To perform exactly these actions, run the following command to apply:
+    terraform apply "drift-demo-recovery.tfplan"
+
+Exit code: 2

@@ -1,0 +1,10 @@
+{
+  "destroy_targets": [
+    "docker_container.api",
+    "docker_image.api"
+  ],
+  "terraform_destroy_count": 2,
+  "image_keep_locally": true,
+  "physical_image_deletion": false,
+  "container_id": "26b5872cc00508382fd4f48bb3862a05144247912b4ce8c1d59edb7c3b3c951c"
+}

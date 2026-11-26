@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-11-26T18:40:25.275254+03:00",
+  "command": "docker update --restart=no ai381-lab4-churn-api",
+  "command_output": "ai381-lab4-churn-api",
+  "container_id": "26b5872cc00508382fd4f48bb3862a05144247912b4ce8c1d59edb7c3b3c951c",
+  "status": "running",
+  "health": "healthy",
+  "actual_restart": "no",
+  "terraform_declared_restart": "unless-stopped"
+}

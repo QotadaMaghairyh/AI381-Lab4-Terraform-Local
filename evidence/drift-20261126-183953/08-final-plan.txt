@@ -1,0 +1,10 @@
+$ terraform plan -input=false -no-color -detailed-exitcode
+docker_image.api: Refreshing state... [id=sha256:9d36a169db1a56bbef85b59c75ebeadbda5c305904334589c4493d53ee88ac44ai381-lab4-churn:test]
+docker_container.api: Refreshing state... [id=26b5872cc00508382fd4f48bb3862a05144247912b4ce8c1d59edb7c3b3c951c]
+
+No changes. Your infrastructure matches the configuration.
+
+Terraform has compared your real infrastructure against your configuration
+and found no differences, so no changes are needed.
+
+Exit code: 0

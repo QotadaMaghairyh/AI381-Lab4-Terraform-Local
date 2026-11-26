@@ -1,0 +1,22 @@
+{
+  "before_container_id": "26b5872cc00508382fd4f48bb3862a05144247912b4ce8c1d59edb7c3b3c951c",
+  "after_container_id": "e0d66327e1d3062f4d0c6817180e7ebcc67abf979f39e3122c3bb37347cd0279",
+  "container_recreated": true,
+  "status": "running",
+  "health": "healthy",
+  "restart_policy": "unless-stopped",
+  "health_http_status": 200,
+  "image_ids_retained": {
+    "ai381-lab4-churn:test": "sha256:9d36a169db1a56bbef85b59c75ebeadbda5c305904334589c4493d53ee88ac44",
+    "ai381-lab3-champion:test": "sha256:9d36a169db1a56bbef85b59c75ebeadbda5c305904334589c4493d53ee88ac44"
+  },
+  "other_containers_unchanged": true,
+  "destroy_resource_count": 2,
+  "rebuild_apply": {
+    "added": 2,
+    "changed": 0,
+    "destroyed": 0
+  },
+  "rebuild_elapsed_seconds": "3.332850438",
+  "final_plan": "No changes"
+}

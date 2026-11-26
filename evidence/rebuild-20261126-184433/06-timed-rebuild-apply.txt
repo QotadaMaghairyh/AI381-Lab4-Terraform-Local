@@ -1,0 +1,103 @@
+$ terraform apply -input=false -auto-approve -no-color
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # docker_container.api will be created
+  + resource "docker_container" "api" {
+      + attach                                      = false
+      + bridge                                      = (known after apply)
+      + command                                     = (known after apply)
+      + container_logs                              = (known after apply)
+      + container_read_refresh_timeout_milliseconds = 15000
+      + entrypoint                                  = (known after apply)
+      + env                                         = (known after apply)
+      + exit_code                                   = (known after apply)
+      + hostname                                    = (known after apply)
+      + id                                          = (known after apply)
+      + image                                       = (known after apply)
+      + init                                        = (known after apply)
+      + ipc_mode                                    = (known after apply)
+      + log_driver                                  = (known after apply)
+      + logs                                        = false
+      + memory_reservation                          = 0
+      + must_run                                    = true
+      + name                                        = "ai381-lab4-churn-api"
+      + network_data                                = (known after apply)
+      + network_mode                                = "bridge"
+      + platform                                    = (known after apply)
+      + read_only                                   = false
+      + remove_volumes                              = true
+      + restart                                     = "unless-stopped"
+      + rm                                          = false
+      + runtime                                     = (known after apply)
+      + security_opts                               = (known after apply)
+      + shm_size                                    = (known after apply)
+      + start                                       = true
+      + stdin_open                                  = false
+      + stop_signal                                 = (known after apply)
+      + stop_timeout                                = (known after apply)
+      + tty                                         = false
+      + wait                                        = false
+      + wait_timeout                                = 60
+
+      + healthcheck (known after apply)
+
+      + labels {
+          + label = "course"
+          + value = "AI381"
+        }
+      + labels {
+          + label = "lab"
+          + value = "lab4"
+        }
+      + labels {
+          + label = "managed_by"
+          + value = "terraform"
+        }
+      + labels {
+          + label = "owner"
+          + value = "QotadaMaghairyh"
+        }
+
+      + ports {
+          + external = 8000
+          + internal = 8000
+          + ip       = "127.0.0.1"
+          + protocol = "tcp"
+        }
+    }
+
+  # docker_image.api will be created
+  + resource "docker_image" "api" {
+      + id           = (known after apply)
+      + image_id     = (known after apply)
+      + keep_locally = true
+      + name         = "ai381-lab4-churn:test"
+      + repo_digest  = (known after apply)
+    }
+
+Plan: 2 to add, 0 to change, 0 to destroy.
+
+Changes to Outputs:
+  + app_url        = "http://127.0.0.1:8000"
+  + container_name = "ai381-lab4-churn-api"
+  + health_url     = "http://127.0.0.1:8000/health"
+docker_image.api: Creating...
+docker_image.api: Creation complete after 0s [id=sha256:9d36a169db1a56bbef85b59c75ebeadbda5c305904334589c4493d53ee88ac44ai381-lab4-churn:test]
+docker_container.api: Creating...
+docker_container.api: Creation complete after 2s [id=e0d66327e1d3062f4d0c6817180e7ebcc67abf979f39e3122c3bb37347cd0279]
+
+Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+app_url = "http://127.0.0.1:8000"
+container_name = "ai381-lab4-churn-api"
+health_url = "http://127.0.0.1:8000/health"
+
+Elapsed seconds: 3.332850438
+Exit code: 0

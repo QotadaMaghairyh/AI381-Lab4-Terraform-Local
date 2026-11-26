@@ -1,0 +1,13 @@
+$ terraform apply -input=false -auto-approve -no-color drift-demo-recovery.tfplan
+docker_container.api: Modifying... [id=26b5872cc00508382fd4f48bb3862a05144247912b4ce8c1d59edb7c3b3c951c]
+docker_container.api: Modifications complete after 0s [id=26b5872cc00508382fd4f48bb3862a05144247912b4ce8c1d59edb7c3b3c951c]
+
+Apply complete! Resources: 0 added, 1 changed, 0 destroyed.
+
+Outputs:
+
+app_url = "http://127.0.0.1:8000"
+container_name = "ai381-lab4-churn-api"
+health_url = "http://127.0.0.1:8000/health"
+
+Exit code: 0

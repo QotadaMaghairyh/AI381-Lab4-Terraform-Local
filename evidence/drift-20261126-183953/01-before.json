@@ -1,0 +1,6 @@
+{
+  "container_id": "26b5872cc00508382fd4f48bb3862a05144247912b4ce8c1d59edb7c3b3c951c",
+  "status": "running",
+  "health": "healthy",
+  "restart_policy": "unless-stopped"
+}

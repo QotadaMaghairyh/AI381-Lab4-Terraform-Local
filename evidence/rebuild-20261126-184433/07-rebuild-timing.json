@@ -1,0 +1,12 @@
+{
+  "command": "terraform apply -input=false -auto-approve -no-color",
+  "timer": "time.monotonic_ns",
+  "start_monotonic_ns": 1549548620925,
+  "end_monotonic_ns": 1552881471363,
+  "elapsed_ns": 3332850438,
+  "elapsed_seconds": "3.332850438",
+  "started_at": "2026-11-26T18:45:21.449262+03:00",
+  "finished_at": "2026-11-26T18:45:24.783314+03:00",
+  "exit_code": 0,
+  "scope": "Whole Terraform apply process, including planning and resource creation; excludes subsequent health verification. Existing local image reused, not rebuilt."
+}

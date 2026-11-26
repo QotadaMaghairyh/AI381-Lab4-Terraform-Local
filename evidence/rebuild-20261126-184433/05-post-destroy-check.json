@@ -1,0 +1,9 @@
+{
+  "lab4_container_removed": true,
+  "terraform_state_resources": [],
+  "image_ids_retained": {
+    "ai381-lab4-churn:test": "sha256:9d36a169db1a56bbef85b59c75ebeadbda5c305904334589c4493d53ee88ac44",
+    "ai381-lab3-champion:test": "sha256:9d36a169db1a56bbef85b59c75ebeadbda5c305904334589c4493d53ee88ac44"
+  },
+  "other_containers_unchanged": true
+}

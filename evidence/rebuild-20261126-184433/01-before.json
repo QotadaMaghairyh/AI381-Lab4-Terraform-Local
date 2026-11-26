@@ -1,0 +1,18 @@
+{
+  "timestamp": "2026-11-26T18:44:37.031898+03:00",
+  "managed_resources": [
+    "docker_container.api",
+    "docker_image.api"
+  ],
+  "keep_locally": true,
+  "container_id": "26b5872cc00508382fd4f48bb3862a05144247912b4ce8c1d59edb7c3b3c951c",
+  "status": "running",
+  "health": "healthy",
+  "image_ids": {
+    "ai381-lab4-churn:test": "sha256:9d36a169db1a56bbef85b59c75ebeadbda5c305904334589c4493d53ee88ac44",
+    "ai381-lab3-champion:test": "sha256:9d36a169db1a56bbef85b59c75ebeadbda5c305904334589c4493d53ee88ac44"
+  },
+  "health_response": "{\"status\":\"ok\"}\nHTTP 200\n",
+  "other_containers_checked_count": 5,
+  "redaction_note": "Unrelated container inventory omitted from public submission evidence."
+}
