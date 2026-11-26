@@ -1,0 +1,8 @@
+# Example only: Terraform does not automatically load this file.
+# After review, copy to terraform.tfvars and adjust the values as needed.
+# Lab 4 tag created from the existing Lab 3 image; original tag preserved.
+owner          = "QotadaMaghairyh"
+image          = "ai381-lab4-churn"
+image_tag      = "test"
+container_name = "ai381-lab4-churn-api"
+published_port = 8000

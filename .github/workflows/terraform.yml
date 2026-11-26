@@ -1,0 +1,56 @@
+name: Terraform checks
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: Format, validate, and scan
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: infra
+    env:
+      TF_IN_AUTOMATION: "true"
+      TF_INPUT: "false"
+    steps:
+      - name: Check out source
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+
+      - name: Set up Terraform
+        uses: hashicorp/setup-terraform@b9cd54a3c349d3f38e8881555d616ced269862dd # v3
+        with:
+          terraform_version: "1.17.2"
+          terraform_wrapper: false
+
+      - name: Check formatting
+        run: terraform fmt -check -recursive
+
+      - name: Initialize without deployment state
+        run: terraform init -backend=false -input=false -lockfile=readonly
+
+      - name: Validate configuration
+        run: terraform validate -no-color
+
+      # Action paths are relative to the repository, not defaults.run above.
+      - name: Scan Terraform configuration
+        uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0
+        with:
+          version: "v0.70.0"
+          scan-type: config
+          scan-ref: infra
+          skip-dirs: infra/.terraform
+          format: table
+          severity: HIGH,CRITICAL
+          exit-code: "1"
+          cache: "false"
+
+      # No plan/apply: GitHub-hosted runners cannot deploy to WSL Docker Desktop.

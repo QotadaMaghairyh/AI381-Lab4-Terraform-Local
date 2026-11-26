@@ -1,0 +1,52 @@
+# Downloaded Terraform providers and working directories.
+**/.terraform/
+
+# Local state and backups.
+*.tfstate
+*.tfstate.*
+.terraform.tfstate.lock.info
+
+# Saved plans (use these names/extensions for local plans).
+*.tfplan
+*.tfplan.json
+*.plan
+tfplan
+plan.out
+
+# Local inputs and backend settings; keep *.example files tracked.
+*.tfvars
+*.tfvars.json
+backend.hcl
+
+# Crash logs may contain configuration or environment details.
+crash.log
+crash.*.log
+
+# Commit .terraform.lock.hcl once generated to preserve provider selections.
+
+# Original instructor materials and local assistant/account metadata.
+/AI381_Lab4_Starter_Module/
+/starter-original/
+/AI381_Lab4_Starter_Module.zip
+/.agents/
+/.codex/
+/.aws/
+
+# Credentials, private keys, and local environment files.
+.env
+.env.*
+!.env.example
+.terraformrc
+terraform.rc
+credentials.tfrc.json
+*.pem
+*.key
+*.p12
+*.pfx
+.ssh/
+id_rsa
+id_ed25519
+secrets/
+
+# Local scanner cache.
+.cache/
