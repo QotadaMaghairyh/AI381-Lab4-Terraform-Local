@@ -1,0 +1,164 @@
+{
+  "timestamp": "2026-11-26T18:56:23.783113+03:00",
+  "method": "GET",
+  "url": "http://127.0.0.1:8000/openapi.json",
+  "http_status": 200,
+  "request_body": null,
+  "response_body": {
+    "openapi": "3.1.0",
+    "info": {
+      "title": "AI381 Churn Prediction API",
+      "version": "0.1.0"
+    },
+    "paths": {
+      "/health": {
+        "get": {
+          "summary": "Health",
+          "operationId": "health_health_get",
+          "responses": {
+            "200": {
+              "description": "Successful Response",
+              "content": {
+                "application/json": {
+                  "schema": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      "/predict": {
+        "post": {
+          "summary": "Predict",
+          "operationId": "predict_predict_post",
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CustomerInput"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "Successful Response",
+              "content": {
+                "application/json": {
+                  "schema": {}
+                }
+              }
+            },
+            "422": {
+              "description": "Validation Error",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/HTTPValidationError"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "components": {
+      "schemas": {
+        "CustomerInput": {
+          "properties": {
+            "tenure_months": {
+              "type": "integer",
+              "minimum": 0.0,
+              "title": "Tenure Months"
+            },
+            "monthly_fee": {
+              "type": "number",
+              "minimum": 0.0,
+              "title": "Monthly Fee"
+            },
+            "support_calls": {
+              "type": "integer",
+              "minimum": 0.0,
+              "title": "Support Calls"
+            },
+            "contract": {
+              "type": "string",
+              "minLength": 1,
+              "title": "Contract"
+            },
+            "internet_service": {
+              "type": "string",
+              "minLength": 1,
+              "title": "Internet Service"
+            }
+          },
+          "additionalProperties": false,
+          "type": "object",
+          "required": [
+            "tenure_months",
+            "monthly_fee",
+            "support_calls",
+            "contract",
+            "internet_service"
+          ],
+          "title": "CustomerInput"
+        },
+        "HTTPValidationError": {
+          "properties": {
+            "detail": {
+              "items": {
+                "$ref": "#/components/schemas/ValidationError"
+              },
+              "type": "array",
+              "title": "Detail"
+            }
+          },
+          "type": "object",
+          "title": "HTTPValidationError"
+        },
+        "ValidationError": {
+          "properties": {
+            "loc": {
+              "items": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "integer"
+                  }
+                ]
+              },
+              "type": "array",
+              "title": "Location"
+            },
+            "msg": {
+              "type": "string",
+              "title": "Message"
+            },
+            "type": {
+              "type": "string",
+              "title": "Error Type"
+            },
+            "input": {
+              "title": "Input"
+            },
+            "ctx": {
+              "type": "object",
+              "title": "Context"
+            }
+          },
+          "type": "object",
+          "required": [
+            "loc",
+            "msg",
+            "type"
+          ],
+          "title": "ValidationError"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-26T18:56:24.914707+03:00",
+  "method": "POST",
+  "url": "http://127.0.0.1:8000/predict",
+  "http_status": 200,
+  "request_body": {
+    "tenure_months": 12,
+    "monthly_fee": 65.5,
+    "support_calls": 2,
+    "contract": "Month-to-month",
+    "internet_service": "Fiber optic"
+  },
+  "response_body": {
+    "churn_probability": 0.288
+  }
+}

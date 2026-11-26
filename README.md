@@ -109,6 +109,15 @@ tests were executed locally. Instructor approval covers the local deployment
 and independent repository; equivalence to each grading item must still be
 checked against the e-learning rubric.
 
+## Final submission audit
+
+For the final technical audit, remaining submission checks, and URL file, see
+[SUBMISSION_CHECKLIST.md](SUBMISSION_CHECKLIST.md) and [repo.txt](repo.txt).
+The [fresh API evidence](evidence/api-audit-20261126-185623/) confirms a healthy
+container and HTTP 200 from both `/health` and the schema-valid `/predict`
+request (`churn_probability: 0.288`). No deployment changes were made during
+that audit.
+
 ## Cleanup
 
 When you intentionally want to remove the Lab 4 deployment, review a destroy

@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-11-26T18:56:23.805650+03:00",
+  "method": "GET",
+  "url": "http://127.0.0.1:8000/health",
+  "http_status": 200,
+  "request_body": null,
+  "response_body": {
+    "status": "ok"
+  }
+}

@@ -58,9 +58,19 @@ Plans and deployments ran locally; there is no Azure OIDC, shared remote
 state, Azure budget enforcement, or automatic GitHub-hosted apply. Trivy's
 configuration scan is not an application image vulnerability scan.
 
-## Evidence review and submission gaps
+## Fresh API submission audit
 
-All 19 captured evidence files were reviewed before staging. Public copies
+Folder: [api-audit-20261126-185623/](api-audit-20261126-185623/).
+`01-container.json` records selected non-sensitive fields: the rebuilt container
+is running and healthy with restart policy `unless-stopped`.
+`02-openapi.json` captures the public API schema used to validate the synthetic
+request. `03-health.json` records GET `/health`: HTTP 200, `{"status":"ok"}`.
+`04-predict.json` records the synthetic request and POST `/predict`: HTTP 200,
+`{"churn_probability":0.288}`. No Docker configuration was changed.
+
+## Public evidence review
+
+All 23 captured evidence files were reviewed before staging. Public copies
 omit unrelated container inventory, runtime bridge addresses, MAC address,
 and runtime hostname. Redacted log sections are marked explicitly. Lab 4
 container/image IDs, generic application paths, localhost URLs, and timing
@@ -76,11 +86,12 @@ The following still need submission review:
 - No screenshots or recorded video are included. If required, capture PR/CI,
   drift detection/recovery, timed rebuild results, and healthy API evidence.
   Do not repeat destructive demonstrations merely to produce screenshots.
-- Initial `/predict` verification returned HTTP 200 with
-  `{"churn_probability":0.288}`, as described in the root README, but a standalone
-  captured prediction request/response and OpenAPI artifact are not included.
+- Standalone prediction request/response and OpenAPI evidence are now included
+  in the fresh API audit folder above; this previous evidence gap is closed.
 - Confirm grading acceptance for omitted Azure features, automated PR plan
   comments, and automatic post-deployment smoke testing; local logs demonstrate
   the corresponding manual checks where applicable.
 
 No claim is made that screenshots, video, or every rubric item is complete.
+See the [final submission checklist](../SUBMISSION_CHECKLIST.md) for the full
+audit scope and known differences from the Azure starter.
